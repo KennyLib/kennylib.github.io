@@ -53,7 +53,7 @@ http.createServer(function(req, res)
     {
         res.end(postData)
     })
-}).listen(8008)
+}).listen(8080)
 console.log('服务器启动完成')
 ```
 
