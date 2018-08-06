@@ -72,3 +72,99 @@
     expect(writeFileStub).to.be.called;
     writeFileStub.restore();
     ```
+- 什么是测试金字塔？举例说明
+    测试金字塔反映了需要写的单元测试、集成测试以及端到端测试的比例：
+    ![image](/images/v2-c53a2eb507dcf761f03e7ef1a5f9ce15_hd.jpg)
+    测试HTTP接口是应该是这样的：
+    1. 很多单元测试，分别测试各个模块（依赖需要stub）
+    2. 较少的集成测试，测试各个模块之间的交互（依赖不能stub）
+    3. 少量端到端测试，去调用真正地接口（依赖不能stub）
+
+- 最喜欢哪个HTTP框架？为什么？
+    这个问题标准答案。需要描述框架的优缺点，这样可以反映开发者对框架的熟悉程度。
+
+- Cookies如何防范XSS攻击？
+    XSS(Cross-Site Scripting，跨站脚本攻击)是指攻击者在返回的HTTP中插入JavaScript脚本。为了减轻这些攻击，需要在HTTP头部部署`set-cookie`：
+    1. HttpOnly - 这个属性可以防止`cross-site scripting`,因为它禁止javascript脚本访问cookie。
+    2. secure - 这个属性告诉浏览器尽在请求为HTTPS是发送cookie.
+    结果应该是这样的：`Set-Cookie:sid=;HttpOnly.`使用Express的话，`cookie-session`默认配置好了。
+- 如何保证依赖的安全性？
+    编写Node.js应用时，很可能依赖成百上千的模块。例如，使用Express的话，会直接依赖[27个模块](https://github.com/expressjs/express/blob/master/package.json#L29)。
+    因此，手动检查所有的依赖是不现实的。唯一的办法是对依赖进行自动化的安全检查，有这这些工具供选择：
+    1. npm outdated
+    2. Trace by RisingStack
+    3. NSP
+    4. GreenKeeper
+    5. Snyk
+
+# 附加题
+
+- 这段代码有什么问题？
+    ``` node
+    new Promise(resolve,reject) =>
+    {
+        throw new Error('error')
+    }
+    .then(console.log('log'))
+    ```
+    then柱子后没有catch。这样的话，错误悔会被忽略。
+    可以这样解决问题：
+    ``` node
+    new Promise(resolve, reject) =>
+    {
+        throw new Error('error')
+    }
+    .then(console.log('log'))
+    .catch(console.error('error'))
+    ```
+    调试一个大型项目时，可以使用监控`unhandledRejection`时间来捕获所有未处理的Promise错误：
+    ``` node
+    process.on('unhandledRejection', (err) =>
+    {
+        console.log(err)
+    })
+    ```
+- 这段代码有什么问题？
+    ``` node
+    function checkApiKey(apiKeyFromDb, apiKeyReceived)
+    {
+        if(apiKeyFromDb === apiKeyReceived)
+        {
+            return true;
+        }
+        return false;
+    }
+    ```
+    比较密码时，不能泄露任何信息，因此比较必须在固定时间完成。否则，可以使用[timing attarcks](https://en.wikipedia.org/wiki/Timing_attack, "Timing attack - Wikipedia")来攻击你的应用。**为什么会这样呢？** Node.js使用V8引擎，他会从性能角度优化代码。他会逐个比较字符串的字母，一旦发现不匹配时就停止比较。当攻击者的密码更准确时，比较的时间越长。因此，攻击者可以通过比较的时间长短来判断密码的正确性。使用 **[cryptiles](https://npm.taobao.org/package/cryptiles)** 可以解决这个问题：
+    ```node
+    function checkApiKey(apiKeyFromDb, apiKeyReceived)
+    {
+        return cryptiles.fixedTimeComparison(apiKeyFromDb, apiKeyReceived)
+    }
+    ```
+
+- 这段代码的输出是什么？
+    ``` node
+    Promise.resolve(1)  
+    .then((x) => x + 1)
+    .then((x) => { throw new Error('My Error') })
+    .catch(() => 1)
+    .then((x) => x + 1)
+    .then((x) => console.log(x))
+    .catch(console.error)
+    ```
+    答案是2，逐行解释如下:
+
+    1. 创建新的Promise，resolve值为1。
+
+    2. x为1，加1之后返回2。
+
+    3. x为2，但是没有用到。抛出一个错误。
+
+    4. 捕获错误，但是没有处理。返回1。
+
+    5. x为1，加1之后返回2。
+
+    6. x为2，打印2。
+
+    7. 不会执行，因为没有错误抛出。
