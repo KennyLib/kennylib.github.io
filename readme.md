@@ -1,5 +1,6 @@
 # 首页
 
+- [nodejs笔记](/nodejs/nodejs特点.md)
 - [nodejs笔记](/nodejs/nodejs笔记.md)
 
 ## 关于markdown
