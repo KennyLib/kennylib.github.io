@@ -43,6 +43,7 @@
   4. 使用async/await([参考async/await替换Promise的6个理由](https://blog.fundebug.com/2017/04/04/nodejs-async-await/))
 
 - 什么是Promise?
+
     Promise可以帮助我们更好的处理异步操作.下面的实例中，100ms后悔打印result字符串，catch用于错误处理。多个Promise可以连接起来。
     ``` node
     new Promise((resolve, reject) =>
@@ -56,12 +57,14 @@
     ```
 
 - 用什么工具保证一致的代码风格？为什么要这样？
+
     团队协作时，保证一致的代码风格重要的，这样团队成员才可以更快的修改代码，而不需要每一次去适应新的风格。这些根据可以帮助我们：
     1. ESlint
     2. Standard
     感兴趣的话，可以参考[Javascript Clean Coding](https://blog.risingstack.com/javascript-clean-coding-best-practices-node-js-at-scale/)
 
 - 什么是Stub?举例说明
+
     Stub用于模拟模块的行为。测试时，Stub可以为函数电泳返回模拟的结果。比如说，当我们写文件时，实际上并不需要咋整去写。
     ``` node
     var fs = require('fs');
@@ -73,6 +76,7 @@
     writeFileStub.restore();
     ```
 - 什么是测试金字塔？举例说明
+
     测试金字塔反映了需要写的单元测试、集成测试以及端到端测试的比例：
     ![image](/images/v2-c53a2eb507dcf761f03e7ef1a5f9ce15_hd.jpg)
 
@@ -82,14 +86,17 @@
     3. 少量端到端测试，去调用真正地接口（依赖不能stub）
 
 - 最喜欢哪个HTTP框架？为什么？
+
     这个问题标准答案。需要描述框架的优缺点，这样可以反映开发者对框架的熟悉程度。
 
 - Cookies如何防范XSS攻击？
+
     XSS(Cross-Site Scripting，跨站脚本攻击)是指攻击者在返回的HTTP中插入JavaScript脚本。为了减轻这些攻击，需要在HTTP头部部署`set-cookie`：
     1. HttpOnly - 这个属性可以防止`cross-site scripting`,因为它禁止javascript脚本访问cookie。
     2. secure - 这个属性告诉浏览器尽在请求为HTTPS是发送cookie.
     结果应该是这样的：`Set-Cookie:sid=;HttpOnly.`使用Express的话，`cookie-session`默认配置好了。
 - 如何保证依赖的安全性？
+
     编写Node.js应用时，很可能依赖成百上千的模块。例如，使用Express的话，会直接依赖[27个模块](https://github.com/expressjs/express/blob/master/package.json#L29)。
     因此，手动检查所有的依赖是不现实的。唯一的办法是对依赖进行自动化的安全检查，有这这些工具供选择：
     1. npm outdated
@@ -101,6 +108,7 @@
 # 附加题
 
 - 这段代码有什么问题？
+
     ``` node
     new Promise(resolve,reject) =>
     {
@@ -126,6 +134,7 @@
     })
     ```
 - 这段代码有什么问题？
+
     ``` node
     function checkApiKey(apiKeyFromDb, apiKeyReceived)
     {
@@ -145,6 +154,7 @@
     ```
 
 - 这段代码的输出是什么？
+
     ``` node
     Promise.resolve(1)  
     .then((x) => x + 1)
