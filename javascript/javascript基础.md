@@ -128,3 +128,16 @@ console.log(fruits.lastIndexOf("Apple"))
 console.log(fruits.lastIndexOf("pint"))
 //输出 -1
 ```
+
+- map()方法
+
+按照原始数组元素顺序依次处理元素，返回一个新数组，新数组中的元素为y原始数组调用函数处理后的值。
+
+``` javascript
+var numbers = [4, 9, 16, 25];
+
+function myFunction() {
+    x = document.getElementById("demo")
+    x.innerHTML = numbers.map(Math.sqrt);
+}
+```
