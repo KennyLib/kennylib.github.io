@@ -135,9 +135,6 @@ console.log(fruits.lastIndexOf("pint"))
 
 ``` javascript
 var numbers = [4, 9, 16, 25];
-
-function myFunction() {
-    x = document.getElementById("demo")
-    x.innerHTML = numbers.map(Math.sqrt);
-}
+numbers.map(Math.sqrt)
+// 输出： 2，3，4，5
 ```
