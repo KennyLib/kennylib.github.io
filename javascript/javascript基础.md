@@ -7,6 +7,7 @@
 * [Javascript 基础](#javascript-基础)
 	* [JavaScript 对象](#javascript-对象)
 		* [Array 对象](#array-对象)
+			* [数组属性](#数组属性)
 			* [对象属性](#对象属性)
 
 <!-- /code_chunk_output -->
@@ -17,6 +18,44 @@
 
 ``` javascript
 var arr = ['Saab', 'Volvo', 'BMW']
+```
+
+#### 数组属性
+
+- length
+
+> 设置、返回数组的长度（数组中元素的数目）。
+
+``` javascript
+var fruits = ["Banana", "Orange", "Apple", "Mango"];
+console.log(fruits.length);
+//输出：4
+
+fruits.length=5;
+console.log(fruits.toString());
+//输出：Banana,Orange,Apple,Mango,
+```
+
+- prototype
+
+>prototype 属性使您有能力向对象添加属性和方法。
+> 当构建一个属性，所有的数组将被设置属性，它是默认值。
+> 在构建一个方法时，所有的数组都可以使用该方法。
+> 注意： Array.prototype 单独不能引用数组, Array() 对象可以。
+> 注意： 在JavaScript对象中，Prototype是一个全局属性。
+
+``` javascript
+Array.prototype.myUcase=function()
+{
+    for (i=0;i<this.length;i++)
+    {
+        this[i]=this[i].toUpperCase();
+    }
+}
+var fruits=["Banana","Orange","Apple","Mango"];
+fruits.myUcase();
+console.log(fruits.sort().toString());
+//输出：APPLE,BANANA,MANGO,ORANGE
 ```
 
 #### 对象属性
