@@ -9,6 +9,8 @@
 		* [Array 对象](#array-对象)
 			* [数组属性](#数组属性)
 			* [对象属性](#对象属性)
+		* [String 对象](#string-对象)
+			* [对象方法](#对象方法)
 
 <!-- /code_chunk_output -->
 
@@ -347,4 +349,113 @@ console.log(fruits.join());
 fruits.splice(2,2);
 console.log(fruits.join());
 //输出：Banana,Orange,Apple,Mango
+```
+
+### String 对象
+
+#### 对象方法
+
+- charAt(index)方法
+
+> 返回指定位置的字符。
+
+``` javascript
+var str = "HELLO WORLD";
+console.log(str.charAt(2))
+//输出：L
+```
+
+- charCodeAt(index)方法
+
+> 返回指定位置的字符的 Unicode编码。
+
+``` javascript
+var str = "HELLO WORLD";
+console.log(str.charCodeAt(2))
+//输出：76
+```
+
+- concat(item1,item2...itemX)方法
+
+> 连接两个或多个字符串；不破坏原字符串。
+
+``` javascript
+var str1 = "Hello ";
+var str2 = "world!";
+var str3 = "hey hey";
+var n =str1.concat(str2,str3)
+console.log(n);
+//输出："Hello world!hey hey"
+```
+
+- fromCharAt(n1,n2...nX)方法
+
+> 将 一个或多个 Unicode 编码转为字符。
+
+``` javascript
+var n = String.fromCharCode(72,69,76,76,79);
+console.log(n);
+//输出：HELLO
+```
+
+- indexOf(searchvalue,index)方法
+
+> 从指定位置开始查询指定字符所在位置；index为起始查询位置，非必填，从头开始查找。
+
+``` javascript
+var str="Hello world, welcome to the universe.";
+var n=str.indexOf("e");
+console.log(n);
+//输出：1
+
+n=str.indexOf("e",3);
+console.log(n)；
+//输出：14
+```
+
+- lastIndexOf(searchvalue, index)方法
+
+> 返回一个指定字符串值最后出现的位置;index为起始查询位置，非必填，从末尾开始查找。
+
+``` javascript
+var str="I am from runoob，welcome to runoob site.";
+var n=str.lastIndexOf("runoob");
+console.log(n);
+//输出：28
+
+var m=str.lastIndexOf("runoob",20);
+console.log(m);
+//输出：10
+```
+
+- match(regexp)方法
+
+> 根据正则表达式匹配出字符串或数组；
+> regexp 表达式中包含g时，返回一个元素为匹配的内容的数组；否则，只执行一次，查找到返回字符串，否则返回null.
+
+``` javascript
+var str="The rain in SPAIN stays mainly in the plain";
+var array=str.match(/ain/gi);
+console.log(array.toString());
+//输出："ain,AIN,ain,ain"
+```
+
+- replace(searchvalue,newvalue)方法
+
+> 在字符串中用一些字符替换另一些字符，或替换一个与正则表达式匹配的字符串。
+
+``` javascript
+var str="Visit Microsoft! Visit microsoft!";
+var n=str.replace("Microsoft","Runoob");
+console.log(n);
+//输出：Visit Runoob! Visit microsoft!
+
+var str1="Mr Blue has a blue house and a blue car";
+var m=str1.replace(/blue/g,"red");
+console.log(m);
+//输出：Mr Blue has a red house and a red car
+
+m=str1.replace(/blue/gi, "red");
+console.log(m);
+//输出：Mr red has a red house and a red car
 ```
