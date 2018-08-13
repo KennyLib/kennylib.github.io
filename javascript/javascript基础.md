@@ -459,3 +459,42 @@ m=str1.replace(/blue/gi, "red");
 console.log(m);
 //输出：Mr red has a red house and a red car
 ```
+
+- slice(start,end)方法
+
+> 可提取字符串的某个部分，并以新的字符串返回被提取的部分。
+
+``` javascript
+var str="Hello world!";
+var n=str.slice(1,5);
+console.log(n)
+//输出：ello
+
+n=str.slice(6);
+console.log(n);
+//输出：world!
+
+console.log(str.slice(-1));
+//输出：！
+```
+
+- split(separator,limit)方法
+
+> 将字符串分割成数组；separator为分割规则（非必须），limit定义了返回的数组长度（非必须）。
+
+``` javascript
+var str="How are you doing today?";
+console.log(str.split());
+//输出：["How are you doing today?"]
+
+console.log(str.split(""));
+//输出：["H", "o", "w", " ", "a", "r", "e", " ", "y", "o", "u", " ", "d", "o", "i", "n", "g", " ", "t", "o", "d", "a", "y", "?"]
+
+console.log(str.split(" "));
+//输出:["How", "are", "you", "doing", "today?"]
+
+console.log(str.split(" ",3));
+//输出:["How", "are", "you"]
+
+```
+
