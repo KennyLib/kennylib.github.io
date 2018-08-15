@@ -1,5 +1,7 @@
 # javascript 闭包
 
+<!-- @import "[TOC]" {cmd="toc" depthFrom=1 depthTo=6 orderedList=false} -->
+
 ## 词法作用域
 
 ``` javascript
@@ -30,3 +32,20 @@ function makeFunc()
 var myFunc=makeFunc();//创建displayName()实例引用
 myFunc();
 ```
+
+`myFunc`是执行`makeFunc`时创建的`displayName`函数实例的引用，而`displayName`实例仍可访问其词法作用域中的变量，即可以访问到`name`。由此，当`myFunc`被调用时`name`仍可被访问。
+
+``` javascript
+function makeAdder(x) {
+  return function(y) {
+    return x + y;
+  };
+}
+
+var add5 = makeAdder(5);
+var add10 = makeAdder(10);
+
+console.log(add5(2));  // 7
+console.log(add10(2)); // 12
+```
+
