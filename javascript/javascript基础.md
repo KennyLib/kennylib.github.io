@@ -14,10 +14,6 @@
 			* [对象方法](#对象方法)
 
 <!-- /code_chunk_output -->
-## JSRUN
-
-<script async src="https://jsrun.net/mHgKp/embed/all/dark/"></script>
-
 ## JavaScript 对象
 
 ### Array 对象
