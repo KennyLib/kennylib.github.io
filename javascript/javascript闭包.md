@@ -2,6 +2,14 @@
 
 <!-- @import "[TOC]" {cmd="toc" depthFrom=1 depthTo=6 orderedList=false} -->
 
+<!-- code_chunk_output -->
+
+* [javascript 闭包](#javascript-闭包)
+	* [词法作用域](#词法作用域)
+	* [闭包](#闭包)
+
+<!-- /code_chunk_output -->
+
 ## 词法作用域
 
 ``` javascript
