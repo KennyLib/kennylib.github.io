@@ -11,6 +11,7 @@
 			* [对象属性](#对象属性)
 		* [String 对象](#string-对象)
 			* [对象方法](#对象方法)
+	* [JSRUN](#JSRUN)
 
 <!-- /code_chunk_output -->
 
@@ -498,3 +499,6 @@ console.log(str.split(" ",3));
 
 ```
 
+## JSRUN
+
+<script async src="https://jsrun.net/mHgKp/embed/all/dark/"></script>
