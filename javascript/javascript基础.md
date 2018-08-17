@@ -27,7 +27,7 @@ var arr = ['Saab', 'Volvo', 'BMW']
 
 > 设置、返回数组的长度（数组中元素的数目）。
 
-``` javascript {.line-numbers}
+``` javascript
 var fruits = ["Banana", "Orange", "Apple", "Mango"];
 console.log(fruits.length);
 //输出：4
