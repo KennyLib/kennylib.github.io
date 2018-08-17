@@ -60,7 +60,7 @@ console.log(add5(2));  // 7
 console.log(add10(2)); // 12
 ```
 
-## 用闭包模拟私有方法
+## 用闭包模拟私有方法：模块模式(module pattern)
 
 原生javascript是不支持私有方法的，但我们可以是闭包来模拟私有方法。私有方法不仅有利于限制对代码的访问；还提供了管理全局命名空间的能力，避免变量污染。这种方法也被称为[模块模式(module pattern)](http://wiki.jikexueyuan.com/project/javascript-design-patterns/modular-model.html)
 
