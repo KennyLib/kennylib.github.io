@@ -5,7 +5,6 @@
 <!-- code_chunk_output -->
 
 * [Javascript 基础](#javascript-基础)
-	* [JSRUN](#jsrun)
 	* [JavaScript 对象](#javascript-对象)
 		* [Array 对象](#array-对象)
 			* [数组属性](#数组属性)
@@ -28,7 +27,7 @@ var arr = ['Saab', 'Volvo', 'BMW']
 
 > 设置、返回数组的长度（数组中元素的数目）。
 
-``` javascript
+``` javascript {.line-numbers}
 var fruits = ["Banana", "Orange", "Apple", "Mango"];
 console.log(fruits.length);
 //输出：4
