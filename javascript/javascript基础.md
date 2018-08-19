@@ -92,7 +92,7 @@ console.log(fruits.sort().toString());
 
 #### 对象属性
 
-##### JavaScript concat()方法
+##### concat()方法
 
 > 连接多个数组，不破坏源数组的情况下生成新的数组
 
