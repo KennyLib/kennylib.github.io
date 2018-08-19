@@ -11,7 +11,7 @@
 				* [length](#length)
 				* [prototype](#prototype)
 			* [对象属性](#对象属性)
-				* [JavaScript concat()方法](#javascript-concat方法)
+				* [concat()方法](#concat方法)
 				* [every()方法](#every方法)
 				* [some()方法](#some方法)
 				* [filter()方法](#filter方法)
@@ -44,6 +44,7 @@
 				* [split(separator,limit)方法](#splitseparatorlimit方法)
 
 <!-- /code_chunk_output -->
+
 ## JavaScript 对象
 
 ### Array 对象
