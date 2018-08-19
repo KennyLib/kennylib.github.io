@@ -408,7 +408,7 @@ console.log(str.charCodeAt(2))
 
 ##### concat(item1,item2...itemX)方法
 
-> 连接两个或多个字符串；不破坏原字符串。
+> 连接两个或多个字符串；不破坏原字符串。（性能问题不建议使用，建议使用操作符‘`+、+=`’ 代替）
 
 ``` javascript
 var str1 = "Hello ";
