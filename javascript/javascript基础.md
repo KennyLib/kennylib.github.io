@@ -23,7 +23,7 @@ var arr = ['Saab', 'Volvo', 'BMW']
 
 #### 数组属性
 
-- length
+##### length
 
 > 设置、返回数组的长度（数组中元素的数目）。
 
@@ -37,7 +37,7 @@ console.log(fruits.toString());
 //输出：Banana,Orange,Apple,Mango,
 ```
 
-- prototype
+##### prototype
 
 >prototype 属性使您有能力向对象添加属性和方法。
 > 当构建一个属性，所有的数组将被设置属性，它是默认值。
@@ -61,7 +61,7 @@ console.log(fruits.sort().toString());
 
 #### 对象属性
 
-- JavaScript concat()方法
+##### JavaScript concat()方法
 
 > 连接多个数组，不破坏源数组的情况下生成新的数组
 
@@ -74,7 +74,7 @@ console.log(children)
 //children 输出 Cecilie,Lone,Emil,Tobias,Linus,Robin
 ```
 
-- every()方法
+##### every()方法
 
 > 验证数组中元素是否满足条件,返回值 boolean类型；**不能对空数组进行检测**
 
@@ -88,7 +88,7 @@ console.log(ages.every(checkAdult))
 //输出false
 ```
 
-- some()方法
+##### some()方法
 
 > 用于检查数组中元素是否有满足指定条件（函数）；只要有一个元素满足则返回true,如果没有元素满足条件则返回false.
 
@@ -109,7 +109,7 @@ console.log(ages.some(checkAdult1))
 
 ```
 
-- filter()方法
+##### filter()方法
 
 > 创建一个新数组，新数组是指定数组中满足条件的远足组成的数组；
 
@@ -123,7 +123,7 @@ console.log(ages.filter(checkAdult))
 //输出 ： 32，33，40
 ```
 
-- forEach()方法
+##### forEach()方法
 
 > 用于调用数组中的每一个元素，并将元素传递给回调函数。**对空数组不调用回调函数的。**
 
@@ -142,7 +142,7 @@ numbers.forEach(myFunction)
  */
 ```
 
-- indexOf()方法
+##### indexOf()方法
 
 > 返回数组中某个指定元素第一次出现的位置；**没有找到指定元素则返回-1。**
 
@@ -155,7 +155,7 @@ console.log(fruits.indexOf("pint"))
 //输出 -1
 ```
 
-- isArray()方法
+##### isArray()方法
 
 > 判断一个对象是否是数组；返回boolean类型值。
 
@@ -167,7 +167,7 @@ console.log(Array.isArray({}));
 //输出： false
 ```
 
-- join()方法
+##### join()方法
 
 > 将数组中所有元素转换成一个字符串。
 
@@ -181,7 +181,7 @@ console.log(fruits.join(" and "))
 
 ```
 
-- toString()方法
+##### toString()方法
 
 > 将数组转换为以`,`分割的字符串,并返回结果。
 
@@ -191,7 +191,7 @@ console.log(fruits.sort().toString());
 //输出：Apple,Banana,Mango,Orange
 ```
 
-- lastIndexOf()方法
+##### lastIndexOf()方法
 
 > 在一个数组中从后向前搜索，返回一个指定元素在数组中最后出现的位置。**没有找到指定元素则返回-1。**
 
@@ -204,7 +204,7 @@ console.log(fruits.lastIndexOf("pint"))
 //输出 -1
 ```
 
-- map()方法
+##### map()方法
 
 > 按照原始数组元素顺序依次处理元素，返回一个新数组，新数组中的元素为y原始数组调用函数处理后的值。
 
@@ -223,7 +223,7 @@ newNumb.map(function(item, index, arr){
 })
 ```
 
-- pop()方法
+##### pop()方法
 
 > 删除数组中最后一个元素并返回删除的元素。
 
@@ -236,7 +236,7 @@ console.log(fruits.join());
 //输出：Banana,Orange,Apple
 ```
 
-- push()方法
+##### push()方法
 
 > 可向数组的末尾添加一个或多个元素，并返回一个新的长度。此方法改变数组的长度。
 
@@ -247,7 +247,7 @@ console.log(fruits.join())
 //输出：Banana,Orange,Apple,Mango,Kiwi,Betel nut
 ```
 
-- unshift()方法
+##### unshift()方法
 
 > 方法可向数组的开头添加一个多个元素，并返回添加之后的数组长度。
 
@@ -262,7 +262,7 @@ console.log(fruits.toString());
 
 ```
 
-- reverse() 方法
+##### reverse() 方法
 
 > 用于颠倒数组中元素的顺序。
 
@@ -273,7 +273,7 @@ console.log(fruits.join())
 //输出：Mango,Apple,Orange,Banana
 ```
 
-- shift()方法
+##### shift()方法
 
 > 用于把数组中的第一个元素从其中删除，并返回第一个元素。
 
@@ -286,7 +286,7 @@ console.log(fruits.join())
 //输出：Orange,Apple,Mango
 ```
 
-- slice()方法
+##### slice()方法
 
 > 从已有的数组中返回选定的元素；可根据索引范围返回新的数组，不破坏原数组。
 
@@ -296,7 +296,7 @@ console.log(fruits.slice(1,3).join());
 //输出：Orange,Apple
 ```
 
-- sort()方法
+##### sort()方法
 
 > 用于对数组中的元素进行排序；排序顺序可以是字母或数字，并按升序或降序。
 > 注意：当数字是按字母顺序排列时"40"将排在"5"前面。
@@ -328,7 +328,7 @@ console.log(points.sort(sortfunc1).join())
 //降序输出：100,40,25,10,5,1
 ```
 
-- splice()方法
+##### splice()方法
 
 > splice(index,howmany,item1...itemX)
 > index 规定从何处添加、删除元素（必须）；必须为数字。
@@ -354,7 +354,7 @@ console.log(fruits.join());
 
 #### 对象方法
 
-- charAt(index)方法
+##### charAt(index)方法
 
 > 返回指定位置的字符。
 
@@ -364,7 +364,7 @@ console.log(str.charAt(2))
 //输出：L
 ```
 
-- charCodeAt(index)方法
+##### charCodeAt(index)方法
 
 > 返回指定位置的字符的 Unicode编码。
 
@@ -374,7 +374,7 @@ console.log(str.charCodeAt(2))
 //输出：76
 ```
 
-- concat(item1,item2...itemX)方法
+##### concat(item1,item2...itemX)方法
 
 > 连接两个或多个字符串；不破坏原字符串。
 
@@ -387,7 +387,7 @@ console.log(n);
 //输出："Hello world!hey hey"
 ```
 
-- fromCharAt(n1,n2...nX)方法
+##### fromCharAt(n1,n2...nX)方法
 
 > 将 一个或多个 Unicode 编码转为字符。
 
@@ -397,7 +397,7 @@ console.log(n);
 //输出：HELLO
 ```
 
-- indexOf(searchvalue,index)方法
+##### indexOf(searchvalue,index)方法
 
 > 从指定位置开始查询指定字符所在位置；index为起始查询位置，非必填，从头开始查找。
 
@@ -412,7 +412,7 @@ console.log(n)；
 //输出：14
 ```
 
-- lastIndexOf(searchvalue, index)方法
+##### lastIndexOf(searchvalue, index)方法
 
 > 返回一个指定字符串值最后出现的位置;index为起始查询位置，非必填，从末尾开始查找。
 
@@ -427,7 +427,7 @@ console.log(m);
 //输出：10
 ```
 
-- match(regexp)方法
+##### match(regexp)方法
 
 > 根据正则表达式匹配出字符串或数组；
 > regexp 表达式中包含g时，返回一个元素为匹配的内容的数组；否则，只执行一次，查找到返回字符串，否则返回null.
@@ -439,7 +439,7 @@ console.log(array.toString());
 //输出："ain,AIN,ain,ain"
 ```
 
-- replace(searchvalue,newvalue)方法
+##### replace(searchvalue,newvalue)方法
 
 > 在字符串中用一些字符替换另一些字符，或替换一个与正则表达式匹配的字符串。
 
@@ -459,7 +459,7 @@ console.log(m);
 //输出：Mr red has a red house and a red car
 ```
 
-- slice(start,end)方法
+##### slice(start,end)方法
 
 > 可提取字符串的某个部分，并以新的字符串返回被提取的部分。
 
@@ -477,7 +477,7 @@ console.log(str.slice(-1));
 //输出：！
 ```
 
-- split(separator,limit)方法
+##### split(separator,limit)方法
 
 > 将字符串分割成数组；separator为分割规则（非必须），limit定义了返回的数组长度（非必须）。
 
