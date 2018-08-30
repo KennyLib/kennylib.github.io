@@ -2,6 +2,7 @@
 
 - [javascript基础](/javascript/javascript基础.md)
 - [javascript闭包](/javascript/javascript闭包.md)
+- [javascript示例](/javascript/shili.md)
 - [javascript设计模式](/javascript/javascript设计模式.md)
 - [nodejs特点 —— 深入浅出Nodejs](/nodejs/深入浅出Nodejs/nodejs特点.md)
 - [nodejs应用场景及应用 —— 深入浅出Nodejs](/nodejs/深入浅出Nodejs/nodejs应用场景及应用.md)
